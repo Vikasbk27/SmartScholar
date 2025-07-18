@@ -9,7 +9,7 @@ import com.vikas.smartscholar.security.JwtService;
 
 import java.time.LocalDate;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -26,7 +26,7 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
     private final PasswordEncoder passwordEncoder;
 
-@Autowired
+
 public AuthenticationService(
         UserRepository userRepository,
         JwtService jwtService,

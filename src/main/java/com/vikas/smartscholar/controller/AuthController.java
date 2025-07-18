@@ -3,7 +3,7 @@ package com.vikas.smartscholar.controller;
 import com.vikas.smartscholar.dto.AuthRequest;
 import com.vikas.smartscholar.dto.AuthResponse;
 import com.vikas.smartscholar.service.AuthenticationService;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +16,7 @@ public class AuthController {
 
     private final AuthenticationService authenticationService;
 
-    @Autowired
+
     public AuthController(AuthenticationService authenticationService) {
         this.authenticationService = authenticationService;
     }
@@ -25,8 +25,19 @@ public ResponseEntity<AuthResponse> register(@RequestBody AuthRequest request) {
     return ResponseEntity.ok(authenticationService.register(request));
 }
 
+// {
+//     "email": "rohan21@gmail.com",
+//     "password": "r123"
+// }
+
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
         return ResponseEntity.ok(authenticationService.authenticate(request));
     }
+
+    // {
+//     "email": "rohan21@gmail.com",
+//     "password": "r123"
+// }
+
 }
